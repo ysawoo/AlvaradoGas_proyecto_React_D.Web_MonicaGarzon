@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+El presente proyecto tiene como nombre: AlvaradoGas,
+Es una página que ofrece servicios de Gasista a los habitantes de la Ciudad de Salta Capital,
+No es necesario un Login.
+El Usuario puede acceder a un catálogo de Servicios (así se llama la sección), 
+luego dependiendo de cual sea el problema a solucionar el usuario 
+puede hacer click en "Reservar" a lo que se abrirá un "Formulario", en este puede hacer un pedido,
+El pedido aparecerá registrado en la sección "Carrito" en forma de tarjetas,
+El usuario puede luego eliminar cualquier pedido que haya realizado si no quiere incluirlo en la Reserva.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación web construida con **React** para [Menciona aquí brevemente de qué trata el proyecto: por ejemplo, "administrar productos y mostrar información de contacto de la empresa AlvaradoGas"].
 
-## Available Scripts
+## Tecnologías Utilizadas
+- React
+- Firebase (Autenticación y Base de Datos)
+- [Otras librerías importantes, ej: React Router, Bootstrap, etc.]
 
-In the project directory, you can run:
+## Ejecución Local
 
-### `npm start`
+Para instalar y ejecutar este proyecto en tu máquina local, sigue los siguientes pasos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/ysawoo/AlvaradoGas_proyecto_React_D.Web_MonicaGarzon.git](https://github.com/ysawoo/AlvaradoGas_proyecto_React_D.Web_MonicaGarzon.git)
+   ¡Perfecto! Esta es la última parte y es muy sencilla. Lo que te están pidiendo es el enlace a tu proyecto en GitHub y que añadas un archivo de documentación a esa carpeta que ya subiste.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Obtener la URL del Repositorio de GitHub
+Dado que ya subiste todo (hiciste git push), tu proyecto ahora está visible en línea.
 
-### `npm test`
+Abre tu navegador y ve a https://github.com/ysawoo/AlvaradoGas_proyecto_React_D.Web_MonicaGarzon.git (o simplemente busca tu repositorio en tu cuenta de GitHub).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Una vez en la página principal del proyecto, copia la URL de la barra de direcciones del navegador.
 
-### `npm run build`
+Esta es la URL del Repositorio de GitHub que debes entregar.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Crear el Archivo README.md
+Un archivo README.md es el documento de bienvenida de tu proyecto. El formato .md significa Markdown, que es un lenguaje de texto simple para darle formato.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Pasos para crearlo y subirlo:
+a. Crear el Archivo (Localmente)
+En la carpeta local de tu proyecto (donde estás usando la terminal), crea un nuevo archivo de texto y guárdalo exactamente como README.md.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Edita ese archivo con la siguiente estructura básica.
 
-### `npm run eject`
+Contenido sugerido para README.md:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Markdown
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# AlvaradoGas - Proyecto de React
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Descripción del Proyecto
+Este proyecto es una aplicación web construida con **React** para [Menciona aquí brevemente de qué trata el proyecto: por ejemplo, "administrar productos y mostrar información de contacto de la empresa AlvaradoGas"].
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tecnologías Utilizadas
+- React
+- Firebase (Autenticación y Base de Datos)
+- [Otras librerías importantes, ej: React Router, Bootstrap, etc.]
 
-## Learn More
+## Ejecución Local
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para instalar y ejecutar este proyecto en tu máquina local, sigue los siguientes pasos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/ysawoo/AlvaradoGas_proyecto_React_D.Web_MonicaGarzon.git](https://github.com/ysawoo/AlvaradoGas_proyecto_React_D.Web_MonicaGarzon.git)
+Acceder al directorio:
 
-### Code Splitting
+2. Bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+cd AlvaradoGas_proyecto_React_D.Web_MonicaGarzon
+Instalar dependencias:
 
-### Analyzing the Bundle Size
+3. Bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm install
+# o si usas yarn: yarn install
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Ejecutar Localmente:
+   con VSC npm start
