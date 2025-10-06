@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// Importaciones de Firebase, ahora incluyendo onSnapshot
 import { db } from '../firebase/config';
 import { 
     collection, 
@@ -7,20 +6,19 @@ import {
     orderBy, 
     doc, 
     deleteDoc,
-    onSnapshot // 👈 ¡CLAVE para el tiempo real!
+    onSnapshot 
 } from "firebase/firestore";
 
 function Carrito() { 
     const [pedidos, setPedidos] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // FUNCIÓN DE LECTURA EN TIEMPO REAL (onSnapshot)
+  
     useEffect(() => {
         const pedidosRef = collection(db, "reservas");
-        // Ordena por fecha de pedido descendente (el más reciente primero)
+       
         const q = query(pedidosRef, orderBy("fecha_pedido", "desc"));
 
-        // onSnapshot crea la conexión en tiempo real
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const pedidosData = querySnapshot.docs.map(doc => ({
                 id: doc.id,
@@ -33,21 +31,15 @@ function Carrito() {
             console.error("Error al suscribirse a los pedidos: ", error);
             setLoading(false);
         });
-
-        // La función de cleanup se ejecuta cuando el componente se desmonta.
-        // Esto detiene la escucha de la base de datos, evitando fugas de memoria.
-        return () => unsubscribe();
+    return () => unsubscribe();
     }, []);
 
-    // FUNCIÓN: Eliminar el documento de Firestore
+  
     const handleEliminarPedido = async (id) => {
         if (window.confirm("¿Estás seguro de que quieres eliminar este pedido de forma permanente?")) {
             try {
                 const pedidoRef = doc(db, "reservas", id);
                 await deleteDoc(pedidoRef);
-
-                // No necesitamos actualizar el estado local (setPedidos) manualmente aquí,
-                // porque onSnapshot detectará el borrado y lo hará automáticamente.
                 
                 alert("Pedido eliminado con éxito.");
 
@@ -58,7 +50,7 @@ function Carrito() {
         }
     };
     
-    // Función auxiliar para formatear la fecha
+   
     const formatDate = (timestamp) => {
         if (!timestamp) return "N/A";
         const date = new Date(timestamp.seconds * 1000);

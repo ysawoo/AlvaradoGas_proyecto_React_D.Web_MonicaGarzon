@@ -1,5 +1,5 @@
 import React from "react";
-import Banner_AGas from "../assets/Banner_AGas.png"; // 👈 ajusta la ruta a tu imagen
+import Banner_AGas from "../assets/Banner_AGas.png";
 
 function Home() {
   const container = {

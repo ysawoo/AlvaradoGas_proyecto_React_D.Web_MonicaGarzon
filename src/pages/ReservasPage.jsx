@@ -1,9 +1,8 @@
-import React, { useState } from "react"; // 👈 1. Importar useState
+import React, { useState } from "react"; 
 import Gasista from "../assets/Gasista.jpg.jpg";
-import { db } from "../firebase/config"; // Tu archivo de configuración
+import { db } from "../firebase/config"; 
 import { collection, addDoc } from "firebase/firestore";
-// Si usaste el contexto para el carrito, necesitarás esto:
-// import { useCarrito } from "../Context/CarritoContext";
+
 
 function FormularioReserva() {
 
@@ -18,7 +17,7 @@ function FormularioReserva() {
     ];
 
 
-    // 2. Estado para capturar los datos del formulario
+  
     const [formData, setFormData] = useState({
         nombre: "",
         email: "",
@@ -27,24 +26,18 @@ function FormularioReserva() {
     });
     const [loading, setLoading] = useState(false);
     
-    // Si usaste el carrito para llevar el pedido:
-    // const { carrito, vaciarCarrito } = useCarrito();
-
-    // 3. Función para actualizar el estado con cada cambio en el input
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevData => ({
             ...prevData,
-            [name]: value, // name es el atributo 'name' del input
+            [name]: value,
         }));
     };
 
-    // 4. Función para enviar la reserva a Firestore
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Detiene la recarga de la página
+        e.preventDefault(); 
         setLoading(true);
 
-        // Validaciones básicas (opcional)
         if (!formData.nombre || !formData.email || !formData.mensaje || !formData.servicio) {
             alert("Por favor, completa todos los campos.");
             setLoading(false);
@@ -53,22 +46,18 @@ function FormularioReserva() {
 
         const nuevaReserva = {
             ...formData,
-            // 💡 Puedes añadir más datos relevantes aquí:
-            // servicios_solicitados: carrito, // Si vienes del carrito
+
             fecha_pedido: new Date(),
             estado: "Pendiente",
         };
 
         try {
-            // Guarda los datos en la colección 'reservas' (debe coincidir con tus reglas de seguridad)
             const docRef = await addDoc(collection(db, "reservas"), nuevaReserva);
             
             console.log("Reserva enviada con ID: ", docRef.id);
             alert("¡Tu reserva ha sido enviada con éxito! La puedes ver en la pestaña Carrito.");
             
-            // Limpia el formulario y el carrito
             setFormData({ nombre: "", email: "", mensaje: "" });
-            // vaciarCarrito(); // Si estás usando el CarritoContext
 
         } catch (error) {
             console.error("Error al añadir la reserva: ", error);
@@ -83,7 +72,6 @@ function FormularioReserva() {
         <div className="container mt-5">
             <h2 className="text-center mb-4">Formulario de Reserva</h2>
             <div className="row">
-                {/* Columna con la imagen (sin cambios) */}
                 <div className="col-md-6 text-center">
                     <img
                         src={Gasista}
@@ -92,9 +80,8 @@ function FormularioReserva() {
                     />
                 </div>
 
-                {/* Columna con el formulario */}
                 <div className="col-md-6">
-                    {/* 5. Vinculamos la función handleSubmit al formulario */}
+
                     <form onSubmit={handleSubmit}>
 
                         <div className="mb-3">
@@ -102,7 +89,7 @@ function FormularioReserva() {
                             <select
                                 className="form-control"
                                 id="servicio"
-                                name="servicio" // CRUCIAL: 'name' debe coincidir con el estado
+                                name="servicio" 
                                 value={formData.servicio}
                                 onChange={handleChange}
                                 required
@@ -111,7 +98,7 @@ function FormularioReserva() {
                                     <option 
                                         key={index} 
                                         value={opcion.value} 
-                                        disabled={opcion.value === ""} // Deshabilita la opción predeterminada
+                                        disabled={opcion.value === ""}
                                     >
                                         {opcion.label}
                                     </option>
@@ -126,9 +113,9 @@ function FormularioReserva() {
                                 type="text" 
                                 className="form-control" 
                                 id="nombre"
-                                name="nombre" // 👈 CRUCIAL: Añadir 'name'
-                                value={formData.nombre} // 👈 CRUCIAL: Vincular valor al estado
-                                onChange={handleChange} // 👈 CRUCIAL: Capturar el cambio
+                                name="nombre" 
+                                value={formData.nombre} 
+                                onChange={handleChange} 
                                 placeholder="Tu nombre" 
                             />
                         </div>
@@ -139,7 +126,7 @@ function FormularioReserva() {
                                 type="email" 
                                 className="form-control" 
                                 id="email"
-                                name="email" // 👈 CRUCIAL: Añadir 'name'
+                                name="email" 
                                 value={formData.email}
                                 onChange={handleChange}
                                 placeholder="tu@email.com" 
@@ -151,7 +138,7 @@ function FormularioReserva() {
                             <textarea
                                 className="form-control"
                                 id="mensaje"
-                                name="mensaje" // 👈 CRUCIAL: Añadir 'name'
+                                name="mensaje" 
                                 value={formData.mensaje}
                                 onChange={handleChange}
                                 rows="4"
@@ -162,7 +149,7 @@ function FormularioReserva() {
                         <button 
                             type="submit" 
                             className="btn btn-primary w-100"
-                            disabled={loading} // Deshabilita el botón mientras se envía
+                            disabled={loading} 
                         >
                             {loading ? "Enviando..." : "Reservar"}
                         </button>

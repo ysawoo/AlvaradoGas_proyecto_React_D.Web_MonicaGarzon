@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from "react-router-dom"; // 👉 Hook de React Router
+import { useNavigate } from "react-router-dom"; 
 
 const Formulario = ({ text = "Reserva" }) => {
   const onSubmit= (data);

@@ -7,13 +7,12 @@ import planosGas from "../assets/planosGas.jpg";
 import rehabilitacionDeGas from "../assets/rehabilitacionDeGas.jpg"
 import fugaGas from "../assets/fugaGas.jpg";
 import { useCarrito } from "../Context_t/CarritoContext";
-// Asegúrate de que la ruta a 'instalacion.jpg' sea correcta
+
 
 function Servicios() {
     const navigate = useNavigate();
     const { agregarAlCarrito } = useCarrito();
 
-    // 1. DATA: Lista de servicios
     const serviciosData = [
         { id: "inst", titulo: "Instalaciones", desc: "Descripción detallada de instalaciones de gas.", img: instalacion },
         { id: "planos", titulo: "Planos de proyectos - relevamiento", desc: "Diseño y relevamiento de planos conforme a normativa.", img: planosGas },
@@ -23,8 +22,7 @@ function Servicios() {
         { id: "rehab", titulo: "Rehabilitación de servicio", desc: "Servicio de rehabilitación de suministro de gas.", img: rehabilitacionDeGas },
     ];
 
-    // 2. ESTILOS: Contenedor principal de la lista
-    const catalogoStyle = { // Renombrado a catalogoStyle
+    const catalogoStyle = { 
         backgroundColor: "#17182fff",
         backgroundSize: "cover",
         display: "flex",
@@ -36,8 +34,7 @@ function Servicios() {
         flexWrap: "wrap",
     };
 
-    // 3. ESTILOS: Estilo de cada tarjeta de servicio
-    const servicioCardStyle = { // Renombrado a servicioCardStyle
+    const servicioCardStyle = { 
         color: "#d7d8e8ff",
         backgroundColor: "#17182fff",
         border: "2px solid #fff3f0ff",
@@ -50,16 +47,16 @@ function Servicios() {
         textAlign: "center",
     };
 
-    // 4. ESTILOS: Estilo de la imagen
-    const imgServicioStyle = { // Renombrado a imgServicioStyle
+    
+    const imgServicioStyle = { 
         width: "300px",
         display: "block",
         margin: "0 auto",
         paddingTop: "1rem",
     };
 
-    // 5. ESTILOS: Estilo del botón
-    const botonReservarStyle = { // Renombrado a botonReservarStyle
+
+    const botonReservarStyle = { 
         display: "block",
         margin: "0 auto",
         paddingTop: "1rem",
@@ -71,7 +68,7 @@ function Servicios() {
         cursor: "pointer",
         textAlign: "center",
         border: "none",
-        marginTop: "1rem", // Añadido para separación
+        marginTop: "1rem", 
     };
 
     return (
@@ -81,7 +78,7 @@ function Servicios() {
                 style={{
                     color: "#fa5e25ff",
                     textAlign: "center",
-                    paddingTop: "2rem", // Añadido padding superior para espacio
+                    paddingTop: "2rem", 
                     margin: 0,
                 }}
             >
@@ -89,27 +86,19 @@ function Servicios() {
             </h1>
 
             <div style={catalogoStyle}> 
-                {/* AHORA HACEMOS MAP SOBRE LA DATA CORRRECTA */}
                 {serviciosData.map((item, index) => (
-                    <div key={item.id} style={servicioCardStyle}> {/* Usar item.id como key es mejor */}
+                    <div key={item.id} style={servicioCardStyle}> 
                         <img src={item.img} alt={item.titulo} style={imgServicioStyle} />
                         <h2>{item.titulo}</h2>
                         <p>{item.desc}</p>
                         
                         <button
                             style={botonReservarStyle}
-                            onClick={() => navigate("/FormularioReserva")} // Redirige al formulario de reserva
+                            onClick={() => navigate("/FormularioReserva")} 
                         >
                             Reservar
                         </button>
-                        
-                        {/* Opcional: Botón para ver el detalle */}
-                        {/* <button 
-                            style={{...botonReservarStyle, backgroundColor: '#fa5e25ff'}}
-                            onClick={() => navigate(`/servicios/${item.id}`)}
-                        >
-                            Ver Detalle
-                        </button> */}
+
                     </div>
                 ))}
             </div>
