@@ -1,6 +1,6 @@
 import React, { useState } from "react"; 
 import Gasista from "../assets/Gasista.jpg.jpg";
-import { db } from "../firebase/config"; 
+import { db } from "../firebase/firebaseConfig"; 
 import { collection, addDoc } from "firebase/firestore";
 
 

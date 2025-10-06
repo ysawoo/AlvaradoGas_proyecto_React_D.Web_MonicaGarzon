@@ -6,7 +6,7 @@ import pruebaDeHermeticidad from "../assets/pruebaDeHermeticidad.jpg";
 import planosGas from "../assets/planosGas.jpg";
 import rehabilitacionDeGas from "../assets/rehabilitacionDeGas.jpg"
 import fugaGas from "../assets/fugaGas.jpg";
-import { useCarrito } from "../Context_t/CarritoContext";
+import { useCarrito } from "../context/CarritoContext";
 
 
 function Servicios() {

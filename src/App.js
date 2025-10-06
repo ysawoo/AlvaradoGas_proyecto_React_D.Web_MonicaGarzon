@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CarritoProvider } from "./Context_t/CarritoContext";
+import { CarritoProvider } from "./context/CarritoContext";
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';

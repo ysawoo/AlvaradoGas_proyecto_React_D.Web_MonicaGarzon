@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { db } from '../firebase/firebaseConfig';
 import { Link } from "react-router-dom";
 
 function ServiciosList() {
